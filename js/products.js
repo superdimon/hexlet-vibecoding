@@ -1,0 +1,40 @@
+// База продуктов: пищевая ценность на 100 г.
+export const PRODUCTS = [
+  { id: 'buckwheat', name: 'Гречка варёная', kcal: 110, protein: 4.2, fat: 1.1, carbs: 21.3 },
+  { id: 'rice', name: 'Рис варёный', kcal: 130, protein: 2.7, fat: 0.3, carbs: 28.2 },
+  { id: 'oatmeal', name: 'Овсянка на воде', kcal: 88, protein: 3, fat: 1.7, carbs: 15 },
+  { id: 'pasta', name: 'Макароны варёные', kcal: 158, protein: 5.8, fat: 0.9, carbs: 30.9 },
+  { id: 'potato', name: 'Картофель варёный', kcal: 82, protein: 2, fat: 0.4, carbs: 16.7 },
+  { id: 'bread-white', name: 'Хлеб пшеничный', kcal: 265, protein: 8.1, fat: 3.2, carbs: 48.8 },
+  { id: 'bread-rye', name: 'Хлеб ржаной', kcal: 210, protein: 6.6, fat: 1.2, carbs: 41 },
+  { id: 'chicken-breast', name: 'Куриная грудка варёная', kcal: 137, protein: 29.8, fat: 1.8, carbs: 0.5 },
+  { id: 'beef', name: 'Говядина тушёная', kcal: 232, protein: 25.8, fat: 14.2, carbs: 0 },
+  { id: 'pork', name: 'Свинина запечённая', kcal: 271, protein: 22.6, fat: 20, carbs: 0 },
+  { id: 'salmon', name: 'Лосось запечённый', kcal: 206, protein: 22.1, fat: 12.4, carbs: 0 },
+  { id: 'tuna', name: 'Тунец консервированный', kcal: 116, protein: 25.5, fat: 1, carbs: 0 },
+  { id: 'egg', name: 'Яйцо варёное', kcal: 155, protein: 12.6, fat: 10.6, carbs: 1.1 },
+  { id: 'cottage-cheese-5', name: 'Творог 5%', kcal: 121, protein: 17.2, fat: 5, carbs: 1.8 },
+  { id: 'greek-yogurt', name: 'Йогурт греческий 2%', kcal: 73, protein: 10, fat: 2, carbs: 3.9 },
+  { id: 'milk', name: 'Молоко 2,5%', kcal: 52, protein: 2.8, fat: 2.5, carbs: 4.7 },
+  { id: 'kefir', name: 'Кефир 2,5%', kcal: 50, protein: 2.8, fat: 2.5, carbs: 4 },
+  { id: 'cheese', name: 'Сыр твёрдый', kcal: 364, protein: 24.1, fat: 29.5, carbs: 0.3 },
+  { id: 'apple', name: 'Яблоко', kcal: 47, protein: 0.4, fat: 0.4, carbs: 9.8 },
+  { id: 'banana', name: 'Банан', kcal: 96, protein: 1.5, fat: 0.5, carbs: 21 },
+  { id: 'orange', name: 'Апельсин', kcal: 43, protein: 0.9, fat: 0.2, carbs: 8.1 },
+  { id: 'tomato', name: 'Помидор', kcal: 20, protein: 1.1, fat: 0.2, carbs: 3.7 },
+  { id: 'cucumber', name: 'Огурец', kcal: 15, protein: 0.8, fat: 0.1, carbs: 2.8 },
+  { id: 'carrot', name: 'Морковь', kcal: 35, protein: 1.3, fat: 0.1, carbs: 6.9 },
+  { id: 'broccoli', name: 'Брокколи варёная', kcal: 35, protein: 2.4, fat: 0.4, carbs: 7.2 },
+  { id: 'avocado', name: 'Авокадо', kcal: 160, protein: 2, fat: 14.7, carbs: 8.5 },
+  { id: 'walnut', name: 'Грецкий орех', kcal: 654, protein: 15.2, fat: 65.2, carbs: 7 },
+  { id: 'almond', name: 'Миндаль', kcal: 579, protein: 21.2, fat: 49.9, carbs: 21.6 },
+  { id: 'olive-oil', name: 'Масло оливковое', kcal: 884, protein: 0, fat: 100, carbs: 0 },
+  { id: 'butter', name: 'Масло сливочное', kcal: 717, protein: 0.9, fat: 81.1, carbs: 0.1 },
+  { id: 'sugar', name: 'Сахар', kcal: 387, protein: 0, fat: 0, carbs: 99.8 },
+  { id: 'honey', name: 'Мёд', kcal: 329, protein: 0.8, fat: 0, carbs: 81.5 },
+  { id: 'chocolate', name: 'Шоколад молочный', kcal: 535, protein: 7.7, fat: 29.7, carbs: 59.4 },
+];
+
+export function findProduct(id) {
+  return PRODUCTS.find((p) => p.id === id) ?? null;
+}

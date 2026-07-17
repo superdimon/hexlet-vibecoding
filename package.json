@@ -1,0 +1,10 @@
+{
+  "name": "calorie-calculator",
+  "version": "1.0.0",
+  "description": "Калькулятор подсчёта калорий: дневная норма и дневник питания",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

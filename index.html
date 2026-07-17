@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор калорий</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥗</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Калькулятор калорий</h1>
+    <p class="subtitle">Рассчитайте дневную норму и ведите дневник питания</p>
+  </header>
+
+  <main class="container">
+    <section class="card" aria-labelledby="norm-title">
+      <h2 id="norm-title">Дневная норма</h2>
+      <form id="profile-form" class="profile-form" novalidate>
+        <fieldset class="field">
+          <legend>Пол</legend>
+          <label><input type="radio" name="sex" value="male" checked> Мужской</label>
+          <label><input type="radio" name="sex" value="female"> Женский</label>
+        </fieldset>
+
+        <div class="field-row">
+          <label class="field">
+            Возраст, лет
+            <input type="number" name="age" min="10" max="120" required placeholder="30">
+          </label>
+          <label class="field">
+            Рост, см
+            <input type="number" name="height" min="100" max="250" required placeholder="175">
+          </label>
+          <label class="field">
+            Вес, кг
+            <input type="number" name="weight" min="30" max="300" step="0.1" required placeholder="70">
+          </label>
+        </div>
+
+        <label class="field">
+          Уровень активности
+          <select name="activity" id="activity-select"></select>
+        </label>
+
+        <label class="field">
+          Цель
+          <select name="goal" id="goal-select"></select>
+        </label>
+
+        <button type="submit" class="btn btn-primary">Рассчитать</button>
+        <p id="form-error" class="error" hidden></p>
+      </form>
+
+      <div id="profile-result" class="result" hidden>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-value" id="result-bmr"></span>
+            <span class="result-label">ккал — базовый метаболизм</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value" id="result-tdee"></span>
+            <span class="result-label">ккал — расход за день</span>
+          </div>
+          <div class="result-item result-item-accent">
+            <span class="result-value" id="result-target"></span>
+            <span class="result-label">ккал — ваша цель</span>
+          </div>
+        </div>
+        <p class="macros">
+          Белки: <b id="result-protein"></b> г ·
+          Жиры: <b id="result-fat"></b> г ·
+          Углеводы: <b id="result-carbs"></b> г
+        </p>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="diary-title">
+      <h2 id="diary-title">Дневник питания</h2>
+      <form id="diary-form" class="diary-form">
+        <label class="field diary-product">
+          Продукт
+          <select id="product-select"></select>
+        </label>
+        <label class="field diary-grams">
+          Масса, г
+          <input type="number" id="grams-input" min="1" max="5000" value="100" required>
+        </label>
+        <button type="submit" class="btn btn-secondary">Добавить</button>
+      </form>
+
+      <div id="diary-empty" class="diary-empty">Пока ничего не добавлено.</div>
+
+      <table id="diary-table" class="diary-table" hidden>
+        <thead>
+          <tr>
+            <th>Продукт</th>
+            <th>Масса</th>
+            <th>Ккал</th>
+            <th>Б</th>
+            <th>Ж</th>
+            <th>У</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="diary-body"></tbody>
+        <tfoot>
+          <tr>
+            <td>Итого</td>
+            <td></td>
+            <td id="total-kcal">0</td>
+            <td id="total-protein">0</td>
+            <td id="total-fat">0</td>
+            <td id="total-carbs">0</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div id="progress-block" class="progress-block" hidden>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p id="progress-text" class="progress-text"></p>
+      </div>
+
+      <button type="button" id="clear-diary" class="btn btn-ghost" hidden>Очистить дневник</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Расчёт по формуле Миффлина — Сан Жеора. Значения ориентировочные и не заменяют консультацию врача.</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
