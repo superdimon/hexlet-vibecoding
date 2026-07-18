@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Communication
 
-Отвечай в чате на русском языке.
+Отвечай в чате на русском языке. Описания коммитов также пиши на русском языке.
 
 ## Project overview
 
