@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Communication
+
+Отвечай в чате на русском языке.
+
 ## Project overview
 
 Калькулятор калорий (Calorie Calculator) — a single-page vanilla JS web app for calculating daily calorie needs and tracking a food diary. No build step, no framework, no dependencies. Plain HTML, CSS, and ES modules. UI text and content are in Russian.
